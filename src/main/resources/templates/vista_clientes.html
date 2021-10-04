@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Telefono</th>
+    <th>Email</th>
+    <th>Direccion</th>
+    <th>Cedula</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th: each="cliente :${clientes} th:object="${cliente}>
+        <td th: text="*{nombre_cliente}"></td>
+        <td th: text="*{telefono_cliente}"></td>
+        <td th: text="*{email_cliente}"></td>
+        <td th: text="*{direccion_cliente}"></td>
+        <td th: text="*{cedula_cliente}"></td>
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>
