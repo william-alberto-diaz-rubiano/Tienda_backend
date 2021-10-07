@@ -57,4 +57,10 @@ public class VentasServiciosImpl implements VentasServicios{
         return null;
 
     }
+
+    @Override
+    public Ventas buscarXCliente(String cedula_cliente) {
+
+        return ventasRepository.findByClient(cedula_cliente);
+    }
 }

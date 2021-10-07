@@ -55,4 +55,13 @@ public class UsuariosControlador {
     public void eliminarUsuarios(@PathVariable("cedula_cliente") Long cedula_cliente){
         usuariosServicios.eliminarUsuarios(cedula_cliente);
     }
+
+    @GetMapping("/login/{usuario}/{password}")
+    public ResponseEntity<Usuarios> login(@PathVariable String usuario, @PathVariable String password){
+        Usuarios usuarios =usuariosServicios.login(usuario,password);
+        if(usuarios==null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(usuarios);
+    }
 }

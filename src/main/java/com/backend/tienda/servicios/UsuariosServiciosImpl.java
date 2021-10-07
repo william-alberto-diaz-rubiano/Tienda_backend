@@ -55,4 +55,10 @@ public class UsuariosServiciosImpl implements UsuariosServicios{
         return usuariosRepository.findById(cedula_usuario).orElse(null);
 
     }
+
+    @Override
+    public Usuarios login(String usuario, String password) {
+        return usuariosRepository.findByUserPassword(usuario,password);
+    }
+
 }

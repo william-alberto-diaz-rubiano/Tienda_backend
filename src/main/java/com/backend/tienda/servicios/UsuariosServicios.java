@@ -10,5 +10,6 @@ public interface UsuariosServicios {
     public Usuarios guardarUsuarios(Usuarios usuarios);
     public List<Usuarios> listarUsuarios();
     public Usuarios buscarUsuario(Long cedula_usuario);
+    public Usuarios login(String usuario,String password);
 
 }
