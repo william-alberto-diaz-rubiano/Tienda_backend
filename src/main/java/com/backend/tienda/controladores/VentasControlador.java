@@ -56,8 +56,8 @@ public class VentasControlador {
         ventasServicios.eliminarVentas(codigo_venta);
     }
     @GetMapping("/buscar/{cedula_cliente}")
-    public ResponseEntity<Ventas> buscarXCliente(@PathVariable("cedula_cliente") String cedula_cliente){
-        Ventas ventas = ventasServicios.buscarXCliente(cedula_cliente);
+    public ResponseEntity<List<Ventas>> buscarXCliente(@PathVariable("cedula_cliente") String cedula_cliente){
+        List<Ventas> ventas = ventasServicios.buscarXCliente(cedula_cliente);
         return ResponseEntity.ok(ventas);
     }
 }
